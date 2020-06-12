@@ -1,0 +1,9 @@
+name: burst
+version: 0.1.0
+
+authors:
+  - zyzzyva <zyzzyva99@gmail.com>
+
+crystal: 0.35.0
+
+license: MIT
