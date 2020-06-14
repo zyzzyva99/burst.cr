@@ -3,7 +3,6 @@ require "../../spec_helper"
 password = "testpass"
 public_key = "5e7c74732edd765a948d6a070f2dc61dc140f5b3c8c6b36ca44e54e83a5b1954"
 account_id = 17836903925142865226
-address = "BURST-LKCC-MQRG-7NH6-HBD4H"
 
 describe Burst::Lib::Crypto do
   describe ".get_public_key" do

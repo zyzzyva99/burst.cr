@@ -1,0 +1,2 @@
+class BadAddressException < Exception
+end
