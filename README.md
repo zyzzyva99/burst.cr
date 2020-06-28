@@ -1,6 +1,8 @@
 # burst.cr
 
-A Crystal implementation of the Burst API and related utilities. Heavily influenced by [pyburstlib](https://github.com/beatsbears/pyburstlib).
+A Crystal implementation of the Burst API and related utilities. Heavily influenced by [BurstLib](https://github.com/CurbShifter/BurstLib) and [pyburstlib](https://github.com/beatsbears/pyburstlib).
+
+Requires Crystal 0.35.0 or higher.
 
 ## Installation
 
@@ -18,13 +20,33 @@ A Crystal implementation of the Burst API and related utilities. Heavily influen
 
 ```crystal
 require "burst"
+
+# Configuration
+wallet_url = "https://burst.wallet.com:7777"
+my_secret_phrase = "blah blah blah"
+my_account_id = "BURST-xxxx-xxxx-xxxx-xxxxx"
+another_account_id = "BURST-yyyy-yyyy-yyyy-yyyyy"
+
+# Initialize the client
+client = Burst::Client.new(wallet_url)
+
+# Get my balance
+balance_info = client.get_balance(my_account_id)
+balance_in_coins = balance_info.balance_nqt.to_i64 / 100000000
+
+# Send some money
+two_burstcoins_in_nqt = 2 * 100000000
+fee_in_nqt = 10000000
+client.send_money(recipient: another_account_id, amount_nqt: two_burstcoins_in_nqt, secret_phrase: my_secret_phrase, fee_nqt: fee_in_nqt)
 ```
 
-TODO: Write usage instructions here
+There are lots more API calls and utilities, with more being added. Docs are coming soon, but for now, check out the specs for usage examples.
 
 ## Development
 
-TODO: Write development instructions here
+Just add some methods and write some specs.
+
+The current specs are designed to be run against a live (**TESTNET!**) wallet. You'll need to copy `.env-test-example` to `.env-test` and fill in some configuration info. See `.env-test-example` for more info.
 
 ## Contributing
 
@@ -37,3 +59,7 @@ TODO: Write development instructions here
 ## Contributors
 
 - [zyzzyva](https://github.com/zyzzyva99) - creator and maintainer
+
+## Donations
+
+BURST: BURST-ZYZZ-5MDK-8A4D-3JY5Y

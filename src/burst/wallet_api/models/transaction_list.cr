@@ -1,7 +1,7 @@
 require "json"
 require "./transaction"
 
-class Burst::WalletApi::Models::AccountTransactions
+class Burst::WalletApi::Models::TransactionList
   include JSON::Serializable
 
   @[JSON::Field(key: "requestProcessingTime")]

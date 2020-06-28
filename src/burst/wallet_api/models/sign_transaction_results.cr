@@ -1,6 +1,6 @@
 require "json"
 
-class Burs::WalletApi::Models::SignTransactionResult
+class Burst::WalletApi::Models::SignTransactionResult
   include JSON::Serializable
 
   @[JSON::Field(key: "signatureHash")]

@@ -1,7 +1,7 @@
 require "json"
 require "./transaction"
 
-class Burst::WalletApi::Models::SignedTransaction
+class Burst::WalletApi::Models::CreateTransactionResponse
   include JSON::Serializable
 
   @[JSON::Field(key: "signatureHash")]
@@ -23,6 +23,4 @@ class Burst::WalletApi::Models::SignedTransaction
 
   @[JSON::Field(key: "fullHash")]
   property full_hash : String?
-
-  property transaction : String
 end
