@@ -3,6 +3,7 @@ require "./wallet_api/*"
 
 class Burst::Client
   include WalletApi::Accounts
+  include WalletApi::ServerInformation
 
   DEFAULT_WALLET_PORT     = 8125
   DEFAULT_WALLET_ENDPOINT = "/burst"

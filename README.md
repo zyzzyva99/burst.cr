@@ -40,7 +40,7 @@ fee_in_nqt = 10000000
 client.send_money(recipient: another_account_id, amount_nqt: two_burstcoins_in_nqt, secret_phrase: my_secret_phrase, fee_nqt: fee_in_nqt)
 ```
 
-There are lots more API calls and utilities, with more being added. Docs are coming soon, but for now, check out the specs for usage examples.
+There are many API calls and utilities, with more being added as development continues. Docs are coming soon, but for now, check out the specs for usage examples.
 
 ## Development
 
@@ -62,4 +62,4 @@ The current specs are designed to be run against a live (**TESTNET!**) wallet. Y
 
 ## Donations
 
-BURST: BURST-ZYZZ-5MDK-8A4D-3JY5Y
+- BURST: BURST-ZYZZ-5MDK-8A4D-3JY5Y
