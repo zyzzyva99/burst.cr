@@ -1,4 +1,5 @@
 require "json"
+require "./transaction"
 
 class Burst::WalletApi::Models::Block
   include JSON::Serializable
@@ -46,7 +47,7 @@ class Burst::WalletApi::Models::Block
   property previous_block : String
 
   @[JSON::Field(key: "nextBlock")]
-  property next_block : String
+  property next_block : String? = nil
 
   @[JSON::Field(key: "payloadHash")]
   property payload_hash : String
@@ -60,5 +61,5 @@ class Burst::WalletApi::Models::Block
   @[JSON::Field(key: "blockSignature")]
   property block_signature : String
 
-  property transactions : Array(String)
+  property transactions : (Array(String) | Array(Transaction))
 end
