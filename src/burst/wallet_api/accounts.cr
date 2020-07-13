@@ -3,9 +3,6 @@ require "../models/api_error"
 require "./models/*"
 
 module Burst::WalletApi::Accounts
-  DEFAULT_SEND_MONEY_FEE_NQT  = 100000000_u64
-  DEFAULT_SEND_MONEY_DEADLINE =          1440
-
   # Get information about the specified account.
   def get_account(account_id : String)
     response = post(@wallet_uri, "getAccount", {"account" => account_id})
@@ -138,8 +135,8 @@ module Burst::WalletApi::Accounts
     amount_nqt : UInt64,
     secret_phrase : String,
     public_key : String? = nil,
-    fee_nqt : UInt64 = DEFAULT_SEND_MONEY_FEE_NQT,
-    deadline : Int = DEFAULT_SEND_MONEY_DEADLINE,
+    fee_nqt : UInt64 = Burst::Client::DEFAULT_SEND_MONEY_FEE_NQT,
+    deadline : Int = Burst::Client::DEFAULT_SEND_MONEY_DEADLINE,
     referenced_transaction_full_hash : String? = nil,
     broadcast : Bool? = nil,
     message : String? = nil,
@@ -191,8 +188,8 @@ module Burst::WalletApi::Accounts
     recipients : Hash(String, UInt64),
     secret_phrase : String,
     public_key : String? = nil,
-    fee_nqt : UInt64 = DEFAULT_SEND_MONEY_FEE_NQT,
-    deadline : Int = DEFAULT_SEND_MONEY_DEADLINE,
+    fee_nqt : UInt64 = Burst::Client::DEFAULT_SEND_MONEY_FEE_NQT,
+    deadline : Int = Burst::Client::DEFAULT_SEND_MONEY_DEADLINE,
     referenced_transaction_full_hash : String? = nil,
     broadcast : Bool? = nil,
     message : String? = nil,
@@ -244,8 +241,8 @@ module Burst::WalletApi::Accounts
     amount_nqt : UInt64,
     secret_phrase : String,
     public_key : String? = nil,
-    fee_nqt : UInt64 = DEFAULT_SEND_MONEY_FEE_NQT,
-    deadline : Int = DEFAULT_SEND_MONEY_DEADLINE,
+    fee_nqt : UInt64 = Burst::Client::DEFAULT_SEND_MONEY_FEE_NQT,
+    deadline : Int = Burst::Client::DEFAULT_SEND_MONEY_DEADLINE,
     referenced_transaction_full_hash : String? = nil,
     broadcast : Bool? = nil,
     message : String? = nil,
@@ -299,8 +296,8 @@ module Burst::WalletApi::Accounts
     description : String,
     secret_phrase : String,
     public_key : String? = nil,
-    fee_nqt : UInt64 = DEFAULT_SEND_MONEY_FEE_NQT,
-    deadline : Int = DEFAULT_SEND_MONEY_DEADLINE,
+    fee_nqt : UInt64 = Burst::Client::DEFAULT_SEND_MONEY_FEE_NQT,
+    deadline : Int = Burst::Client::DEFAULT_SEND_MONEY_DEADLINE,
     referenced_transaction_full_hash : String? = nil,
     broadcast : Bool? = nil,
     message : String? = nil,

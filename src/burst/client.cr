@@ -5,9 +5,13 @@ class Burst::Client
   include WalletApi::Accounts
   include WalletApi::ServerInformation
   include WalletApi::Block
+  include WalletApi::Mining
 
   DEFAULT_WALLET_PORT     = 8125
   DEFAULT_WALLET_ENDPOINT = "/burst"
+
+  DEFAULT_SEND_MONEY_FEE_NQT  = 100000000_u64
+  DEFAULT_SEND_MONEY_DEADLINE =          1440
 
   @wallet_uri : URI
 
