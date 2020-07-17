@@ -20,7 +20,12 @@ module Burst::Lib::Utils::Converters
   # Converts an array of UInt8 to a string of corresponding hexadecimal numbers,
   # retaining order.
   def self.byte_array_to_hex_string(arr : Array(UInt8))
-    arr.map(&.to_s(16)).join
+    String.build(arr.size * 2) do |str|
+      arr.each do |u|
+        str << ((u >> 4) & 0x0f).to_s(16)
+        str << (u & 0x0f).to_s(16)
+      end
+    end
   end
 
   # Returns true if the string represents a series of hexadecimal bytes, or
